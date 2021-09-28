@@ -1,0 +1,105 @@
+﻿<Window x:Class="CinemaStep.View.BookSucces"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CinemaStep.View"
+        mc:Ignorable="d"
+        Title="BookSucces" Height="600" Width="500"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize">
+    <Grid Background="#6B1000">
+        <Image Source = "../Images/bookingSummary.png" 
+               Stretch="Fill">
+        </Image >
+        <Image Source="../Images/bookedSuccessfully.png"
+               Margin="0,0,0,430"
+               Width="300">
+        </Image>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="1">
+                <WrapPanel Margin="120,13,0,0">
+                    <TextBlock Text="Name : "
+                               FontSize="20"
+                               FontFamily="comic sans ms"></TextBlock>
+                    <TextBox x:Name="nameTxtb"
+                             Text="Rafael"
+                             FontSize="20"
+                             FontFamily="comic sans ms"></TextBox>
+                </WrapPanel>
+                <WrapPanel Margin="120,13,0,0">
+                    <TextBlock Text="Film : "
+                               FontSize="20"
+                               FontFamily="comic sans ms"
+                               ></TextBlock>
+                    <TextBox x:Name="filmTxtb"
+                             Text="Matrix"
+                             FontSize="20"
+                             FontFamily="comic sans ms"></TextBox>
+                </WrapPanel>
+                <WrapPanel Margin="120,13,0,0">
+                    <TextBlock Text="Date : "
+                               FontSize="20"
+                               FontFamily="comic sans ms"
+                               ></TextBlock>
+                    <TextBox x:Name="dateTxtb"
+                             Text="24.09.2021"
+                             FontSize="20"
+                             FontFamily="comic sans ms"></TextBox>
+                </WrapPanel>
+                <WrapPanel Margin="120,13,0,0">
+                    <TextBlock Text="Time : "
+                               FontSize="20"
+                               FontFamily="comic sans ms"
+                               ></TextBlock>
+                    <TextBox x:Name="timeTxtb"
+                             Text="19:30"
+                             FontSize="20"
+                             FontFamily="comic sans ms"></TextBox>
+                </WrapPanel>
+                <WrapPanel Margin="120,13,0,0">
+                    <TextBlock Text="Seats : "
+                               FontSize="20"
+                               FontFamily="comic sans ms"
+                               ></TextBlock>
+                    <TextBox x:Name="seatTxtb"
+                             Text="A2"
+                             FontSize="20"
+                             FontFamily="comic sans ms"></TextBox>
+                </WrapPanel>
+                <Image Source="../Images/drink.png"
+                       Width="200"
+                       Margin="80,-10,0,0">
+                </Image>
+            </StackPanel>
+            <WrapPanel Grid.Row="2">
+                <Button x:Name="emailBtn"
+                        Content="Email"
+                        FontFamily="comic sans ms"
+                        FontSize="20"
+                        Margin="100,40,0,0"
+                        Width="120"
+                        Height="60"
+                        Style="{StaticResource InformButton}"
+                        Background="White"
+                        Command="{Binding EmailCommand}"></Button>
+                <Button x:Name="closeBtn"
+                        Content="Close"
+                        FontFamily="comic sans ms"
+                        FontSize="20"
+                        Margin="50,40,0,0"
+                        Width="120"
+                        Height="60"
+                        Style="{StaticResource InformButton}"
+                        Background="White"
+                        Command="{Binding CloseCommand}"></Button>
+            </WrapPanel>
+        </Grid>
+    </Grid>
+</Window>

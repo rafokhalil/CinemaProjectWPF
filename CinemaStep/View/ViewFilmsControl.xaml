@@ -1,0 +1,127 @@
+﻿<UserControl x:Class="CinemaStep.View.ViewFilmsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CinemaStep.View" 
+             xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3.5*"/>
+            <ColumnDefinition Width="6.5*"/>
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="White"
+            BorderThickness="0.2">
+
+            <StackPanel>
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="MidnightBlue" Offset="0"/>
+                        <GradientStop Color="Wheat" Offset="1"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+                <Image Source="../Images/KurtlarVadisi.png"
+               Margin="30"
+               Name="filmImg"></Image>
+                <Button x:Name="showTrailerBtn"
+                        Command="{Binding ShowTrailerCommand}"
+                    Style="{StaticResource InformButton}"
+                    Content="Show Trailer"
+                        Width="200"
+                        Height="50"
+                        Foreground="Black"
+                        FontFamily="comic sans ms"
+                        Background="White"
+                        FontSize="22"
+                        ></Button>
+            </StackPanel>
+        </Border>
+            <wpf:ChromiumWebBrowser x:Name="ChromiumBrowser" Height="300"/>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <StackPanel>
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="MidnightBlue" Offset="0"/>
+                        <GradientStop Color="Wheat" Offset="1"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+                <Label Foreground="White"
+                       FontFamily="comic sans ms"
+                       FontSize="40"
+                       Name="filmNameLbl"
+                       Margin="0,9,0,0"></Label>
+                <Label Name="filmDescriptionLbl"
+                       FontFamily="comic sans ms"
+                       FontSize="20"
+                       Foreground="White"
+                       ></Label>
+            </StackPanel>
+            <StackPanel Grid.Row="1">
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Wheat" Offset="0"/>
+                        <GradientStop Color="MidnightBlue" Offset="1"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+                <WrapPanel >
+                    <Label Content="From:"
+                           FontFamily="comic sans ms"
+                           FontSize="22"
+                           Foreground="White"></Label>
+                    <Label 
+                           FontFamily="comic sans ms"
+                           FontSize="22"
+                           Foreground="White"></Label>
+                </WrapPanel>
+                <WrapPanel >
+                    <Label Content="To:"
+                           FontFamily="comic sans ms"
+                           FontSize="22"
+                           Foreground="White"></Label>
+                    <Label 
+                           FontFamily="comic sans ms"
+                           FontSize="22"
+                           Foreground="White"></Label>
+                </WrapPanel>
+                <WrapPanel>
+                    <Label Content="Times:"
+                           FontFamily="comic sans ms"
+                           FontSize="22"
+                           Foreground="White"></Label>
+                    <Label 
+                           FontFamily="comic sans ms"
+                           FontSize="22"
+                           Foreground="White"></Label>
+                </WrapPanel>
+                <WrapPanel Width="350"
+                           HorizontalAlignment="Left">
+                    <Label Content="IMDB:"
+                           FontFamily="comic sans ms"
+                           FontSize="22"
+                           Foreground="White"></Label>
+                    <Label 
+                           FontFamily="comic sans ms"
+                           FontSize="22"
+                           Foreground="White"></Label>
+                </WrapPanel>
+                <Button Content="Book Now"
+                        Width="150"
+                        Height="50"
+                        Margin="350,7,0,0"
+                        Foreground="Black"
+                        FontFamily="comic sans ms"
+                        Background="White"
+                        FontSize="26"
+                        Name="bookNowBtn"
+                        Style="{StaticResource InformButton}"
+                        Command="{Binding BookNowCommand}"></Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>
